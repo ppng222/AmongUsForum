@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Among Us Forum</title>
+		<meta charset="UTF-8" name="viewport" content="width=device-width"/>
+		<link rel="stylesheet" href="styles.css" />
+		<script src="jquery-3.1.0.min.js"></script>
+		<script type="text/javascript" src="main.js"></script>
+	</head>
+	<body class="dark_body">
+		<header id="header">
+			<table class="web_header">
+				<tbody>
+					<tr>
+						<td class="web_header_entry">
+							<a class="header_link" title="Home" href="./index.html">
+								<div>
+									<img id="header_uk" src="img/ukcrew.png" height="64"/>
+									<span class="web_header_text_home">AMONG US FORUMS</span>
+								</div>
+							</a>
+						</td>
+						<td class="web_header_entry" id="context_menu_button">
+							<div>
+								<img id="header_uk" src="img/ico_arrow.png" height="64"/>
+							</div>
+							<div id="other_context_menu">
+								<div class="ctx_menu_entry">
+									<a class="ctx_menu_link"  title="Sign Up" href="./register.html">Sign up</a>
+								</div>
+								<div class="ctx_menu_entry">
+									<span class="button_theme">Change theme</span>
+								</div>
+							</div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<h1>Welcome to the Among Us Forums</h1>
+		</header>
+		<!--<div id="navigation"><nav id="main_nav"><h3 id="nav_title">Navigation</h3><ul id="nav_column"><li class="nav_entry"><a id="external" href="./register.html">Sign up for an account!</a></li></ul></nav><img id="small_uk" src="img/ukcrew.png" alt="Among us Crewmate in UK attire" width="128"/><figcaption class="hidden" id="big_fig"><img id="big_uk" src="img/ukcrew.png" alt="Among us Crewmate in UK attire" width="256"/><p class="uk_text">UK AMONG US</p></figcaption></div>-->
+		<div id="main">
+			<div id="player_info">
+				<h2>Crewmate color Info</h2>
+			</div>
+			<div id="maps">
+				<h2>Maps</h2>
+				<div id="skeld_grp">
+					<img class="map_entry" id="skeld" alt="Skeld" title="Skeld" src="img/maps/SKELD_T.png" />
+					<figcaption class="map_popup hidden" id="skeld_fig">
+						<img class="map_prev" id="skeld_p" alt="Skeld Preview" title="Skeld preview" src="img/maps/SKELD.png" />
+						<p class="map_prev_txt">THE SKELD</p>
+					</figcaption>
+				</div>
+				<div id="mira_grp">
+					<img class="map_entry" id="mira_hq" alt="MIRA HQ" title="MIRA HQ" src="img/maps/MIRA_T.png" />
+					<figcaption class="map_popup hidden" id="mira_fig">
+						<img class="map_prev " id="mira_p" alt="MIRA HQ Preview" title="MIRA HQ preview" src="img/maps/MIRA.png" />
+						<p class="map_prev_txt">MIRA HQ</p>
+					</figcaption>
+				</div>
+				<div id="polus_grp">
+					<img class="map_entry" id="polus" alt="Polus" title="Polus" src="img/maps/POLUS_T.png" />
+					<figcaption class="map_popup hidden" id="polus_fig">
+						<img class="map_prev " id="polus_p" alt="Polus Preview" title="Polus preview" src="img/maps/POLUS.png" />
+						<p class="map_prev_txt">POLUS</p>
+					</figcaption>
+				</div>
+				<div id="airship_grp">
+					<img class="map_entry" id="airship" alt="The Airship" title="The Airship" src="img/maps/AIRSHIP_T.png" />
+					<figcaption class="map_popup hidden" id="airship_fig">
+						<img class="map_prev " id="airship_p" alt="The Airship Preview" title="The Airship preview" src="img/maps/AIRSHIP.png" />
+						<p class="map_prev_txt">THE AIRSHIP</p>
+					</figcaption>
+				</div>
+				<figcaption class="map_popup" id="base_fig">
+					<img class="map_prev" id="base_p" title="Map preview" src="img/maps/BASE.png" />
+					<p class="map_prev_txt">Hover over a map to preview it!</p>
+				</figcaption>
+			</div>
+			<div id="Looking_for">
+				<h2>Looking for players</h2>
+				<div id="add_lobby">
+					<form method="post" action="submit-lobby.php" >
+						<fieldset>
+							<legend>Add your lobby!</legend>
+							<table class="lobby_entry">
+								<tr>
+									<td id="lobby_code_field">
+										<label>Lobby Code: </label>
+										<input type="text" name="lobby" pattern="[A-Z]{6}" />
+									</td>
+								</tr>
+								<tr>
+									<td id="lobby_map_type">
+										<label>Map: </label>
+										<select name="map">
+											<optgroup label="Choose a map">
+												<option>The Skeld</option>
+												<option>MIRA HQ</option>
+												<option>Polus</option>
+												<option>The Airship</option>
+											</optgroup>
+										</select>
+									</td>
+								</tr>
+								<tr>
+									<td id="lobby_impostor_count">
+										<label>Impostors: </label>
+										<input type="radio" name="killer_count" value="1" />
+										<span class="impostor_count">1</span>
+										<input type="radio" name="killer_count" value="2" checked />
+										<span class="impostor_count">2</span>
+										<input type="radio" name="killer_count" value="3" />
+										<span class="impostor_count">3</span>
+									</td>
+								</tr>
+							</table>
+							<input type="submit" />
+							<input type="reset" />
+						</fieldset>
+					</form>
+					<form method="get">
+						<fieldset>
+							<legend>Search with a filter!</legend>
+							<table class="lobby_entry">
+								<tr>
+									<td id="lobby_filter_map_type">
+										<label>Map: </label>
+										<select name="map" id="lobby_filter_map_select">
+											<optgroup label="Choose a map">
+												<option>None</option>
+												<option>The Skeld</option>
+												<option>MIRA HQ</option>
+												<option>Polus</option>
+												<option>The Airship</option>
+											</optgroup>
+										</select>
+									</td>
+								</tr>
+							</table>
+							<input type="button" id="filter_select" value="Filter"/>
+						</fieldset>
+					</form>
+					<div id="lobbies_table">
+					</div>
+				</div>
+				<div id="User_Search">
+					<h2>Search players!</h2>
+					<div id="search_user_form">
+						<form method="post" action="search-users.php">
+							<fieldset>
+								<legend>Search options: </legend>
+								<table class="user_info">
+									<tr>
+										<td id="user_email">
+											<label>Email: </label>
+											<input
+													type="email"
+													name="email"
+													placeholder="user@mail.com"
+													/>
+										</td>
+									</tr>
+									<tr>
+										<td id="phone">
+											<label>Phone Number: </label>
+											<input
+													type="tel"
+													name="phone"
+													placeholder="###-###-####"
+													pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+													/>
+										</td>
+									</tr>
+									<tr id="country_row">
+										<td id="country">
+											<label>Country: </label>
+											<select name="countries" id="countries_list">
+												<option value="Canada">Canada</option>
+												<option value="United States">United States</option>
+											</select>
+										</td>
+									</tr>
+									<tr>
+										<td id="search_by">
+											<label>Search players by:
+											</label>
+											<br/>
+											<input type="radio" id="user_filter_email" name="user_filter_button" value="email" checked/>
+											<span class="impostor_count">Email</span>
+											<br/>
+											<input type="radio" id="user_filter_phone" name="user_filter_button" value="phone" />
+											<span class="impostor_count">Phone Number</span>
+											<br/>
+											<input type="radio" id="user_filter_country" name="user_filter_button" value="country" />
+											<span class="impostor_count">Country</span>
+											
+										</td>
+									</tr>
+								</table>
+
+								<input id="submit_register" type="submit" />
+								<input type="reset" />
+							</fieldset>
+						</form>
+					</div>
+					
+				</div>
+			</div>
+		</body>
+	</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Among Us Forum</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="jquery-3.1.0.min.js"></script>
+    <script type="text/javascript" src="main.js"></script>
+  </head>
+  <body class="dark_body">
+    <header id="header">
+			<table class="web_header">
+        <tbody>
+            <tr>
+                <td class="web_header_entry">
+                  <a class="header_link" title="Home" href="./index.html">
+                  <div>
+                    <img id="header_uk" src="img/ukcrew.png" height="64"/>
+                    <span class="web_header_text_home">AMONG US FORUMS</span>
+                  </div>
+                  </a>
+                </td>
+          </tr>
+        </tbody>
+      </table>
+			<h1>Sign up for an account!</h1>
+		</header>
+    <!--
+    <div id="navigation">
+      <nav id="main_nav">
+        <h3 id="nav_title">
+          Navigation
+        </h3>
+        <ul id="nav_column">
+          <li class="nav_entry"><a href="./index.html">Home</a></li>
+        </ul>
+      </nav>
+    </div>
+    -->
+    <div id="main">
+      <div id="user_info_register">
+        <form method="post" action="http://examples.funwebdev.com/process.php">
+          <fieldset>
+            <legend>User info:</legend>
+            <table class="user_info">
+              <tr>
+                <td id="user_email">
+                  <label>Email: </label>
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="user@mail.com"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td id="phone">
+                  <label>Phone Number: </label>
+                  <input
+                    type="tel"
+                    name="phone"
+                    placeholder="###-###-####"
+                    pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                  />
+                </td>
+              </tr>
+              <tr id="country_row">
+                <td id="country">
+                  <label>Country: </label>
+                  <select name="countries" id="country_list">
+                    <option value="Canada">Canada</option>
+                    <option value="United States">United States</option>
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <td id="tos_status">
+                  <label>I accept the Terms of Service for this website:
+                  </label>
+                  <br/>
+                  <input type="radio" name="tos_accept" value="true" />
+                  <span class="impostor_count">I Agree</span>
+                  <br/>
+                  <input type="radio" name="tos_accept" value="false" />
+                  <span class="impostor_count">I Disagree</span>
+                </td>
+              </tr>
+            </table>
+
+            <input type="submit" />
+            <input type="reset" />
+          </fieldset>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
